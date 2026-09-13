@@ -1,0 +1,65 @@
+{
+  "protocol_version": 1,
+  "motion_golden_frames": [
+    {
+      "description": "Standard stationary frame",
+      "hex": "0101010064000000e80300000000000000000000",
+      "expected": {
+        "version": 1,
+        "calibrated": true,
+        "clipped": false,
+        "sequence": 1,
+        "deviceUptimeMs": 100,
+        "accelX": 1000,
+        "accelY": 0,
+        "accelZ": 0,
+        "gyroX": 0,
+        "gyroY": 0,
+        "gyroZ": 0
+      }
+    },
+    {
+      "description": "Negative acceleration and clipping flags",
+      "hex": "01030200c800000018fc10270000000000000000",
+      "expected": {
+        "version": 1,
+        "calibrated": true,
+        "clipped": true,
+        "sequence": 2,
+        "deviceUptimeMs": 200,
+        "accelX": -1000,
+        "accelY": 10000,
+        "accelZ": 0,
+        "gyroX": 0,
+        "gyroY": 0,
+        "gyroZ": 0
+      }
+    }
+  ],
+  "device_info_golden_frame": {
+    "hex": "0107320011223344556677880100000002000000",
+    "expected": {
+      "version": 1,
+      "capabilityMask": 7,
+      "sampleRateHz": 50,
+      "bootId": 1144201745,
+      "stableDeviceId": 2289526357,
+      "firmwareMajor": 1,
+      "firmwareMinor": 0,
+      "firmwarePatch": 0,
+      "supportedProfileMask": 2
+    }
+  },
+  "set_state_golden_frame": {
+    "hex": "01010500112233440a0000000c00000088130000",
+    "expected": {
+      "version": 1,
+      "state": 1,
+      "stateRevision": 5,
+      "bootId": 1144201745,
+      "wireSetId": 10,
+      "cumulativeReps": 12,
+      "activeDurationMs": 5000
+    }
+  }
+}
