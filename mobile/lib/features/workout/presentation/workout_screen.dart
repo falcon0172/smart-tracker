@@ -92,7 +92,7 @@ class _WorkoutScreenState extends ConsumerState<WorkoutScreen> {
       appBar: AppBar(
         title: const Text('Active Workout Set'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -104,7 +104,7 @@ class _WorkoutScreenState extends ConsumerState<WorkoutScreen> {
             _buildRepCounterCard(repCount, currentState),
             const SizedBox(height: 16),
             _buildLoadEntryRow(),
-            const Spacer(),
+            const SizedBox(height: 24),
             _buildSetControlButtons(currentState),
           ],
         ),
